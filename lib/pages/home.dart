@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:component_dev/providers/providers_menu.dart';
-import 'package:component_dev/utils/utils_function.dart';
+import 'package:component_dev_001/providers/providers_menu.dart';
+import 'package:component_dev_001/utils/utils_function.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
