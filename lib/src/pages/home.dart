@@ -21,7 +21,6 @@ class Home extends StatelessWidget {
       initialData: [],
       future: menuProvider.loadData(),
       builder: (context, snapshot) {
-        print(snapshot.data);
         return ListView(children: _listItems(snapshot.data, context));
       },
     );
