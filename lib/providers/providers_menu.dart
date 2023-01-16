@@ -11,7 +11,7 @@ class _ProviderMenu {
   }
 
   Future<List<dynamic>> loadData() async {
-    final value = await rootBundle.loadString('data/json_menu.json');
+    final value = await rootBundle.loadString('Data/json_menu.json');
     Map datos = json.decode(value);
     getOption = datos['rutas'];
 
