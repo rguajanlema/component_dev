@@ -9,34 +9,34 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Componentes Flutter'),
-          ),
-          body: _list()),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Componentes Flutter'),
+        ),
+        body: _list());
   }
 
   Widget _list() {
     return FutureBuilder(
+      initialData: [],
       future: menuProvider.loadData(),
       builder: (context, snapshot) {
         print(snapshot.data);
-        return ListView(children: _listItems(snapshot.data));
+        return ListView(children: _listItems(snapshot.data, context));
       },
     );
   }
 
-  List<Widget> _listItems(List<dynamic>? optListMenu) {
+  List<Widget> _listItems(List<dynamic>? optListMenu, BuildContext context) {
     final List<Widget> optValueWidget = [];
     optListMenu?.forEach((element) {
       final witgetvalue = ListTile(
-        title: element['Texto'],
+        title: Text(element['texto']),
         leading: getIcon(element['icon']),
         trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, element['ruta']);
+        },
       );
       optValueWidget.add(witgetvalue);
     });
