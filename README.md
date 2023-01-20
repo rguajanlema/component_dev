@@ -17,4 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Link course
 
-https://www.youtube.com/watch?v=UpvcOKWinJg&list=PLgD-VLjdOvqj4qcsYTREjiLcVMK9vzbfj&index=31
+https://www.youtube.com/watch?v=YnKb4dcTiek&list=PLgD-VLjdOvqj4qcsYTREjiLcVMK9vzbfj&index=33
