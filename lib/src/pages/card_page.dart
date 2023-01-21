@@ -9,11 +9,14 @@ class CardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Card App Bar'),
+        title: const Text('CardView'),
       ),
       body: ListView(
         padding: EdgeInsets.all(20.0),
-        children: <Widget>[_cardl()],
+        children: <Widget>[
+          _cardl(),
+          _card2(),
+        ],
       ),
     );
   }
@@ -34,8 +37,29 @@ class CardPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               TextButton(onPressed: () {}, child: Text('Cancelar')),
-              TextButton(onPressed: () {}, child: Text('Editar'))
+              TextButton(onPressed: () {}, child: Text('Aceptar'))
             ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _card2() {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          FadeInImage(
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            image: NetworkImage(
+                'https://img.freepik.com/free-vector/best-scene-nature-landscape-mountain-river-forest-with-sunset-evening-warm-tone-illustration_1150-39403.jpg'),
+            fadeInDuration: Duration(microseconds: 200),
+            height: 300,
+            fit: BoxFit.cover,
+          ),
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text('Prueba fadeIn Image'),
           )
         ],
       ),
