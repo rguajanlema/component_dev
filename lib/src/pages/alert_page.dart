@@ -21,31 +21,29 @@ class AlertPage extends StatelessWidget {
     );
   }
 
-  Widget _showAlert(BuildContext context) {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text('Titulo'),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              // ignore: prefer_const_literals_to_create_immutables
-              children: <Widget>[
-                Text("Contenido de la tarjeta"),
-                FlutterLogo(
-                  size: 100.00,
-                ),
-              ],
-            ),
-            actions: <Widget>[
-              TextButton(
-                  onPressed: () => Navigator.of(context).pop(),
-                  child: Text('Cancelar')),
-              TextButton(
-                  onPressed: () => Navigator.of(context).pop(),
-                  child: Text('Aceptar'))
+  Future _showAlert(BuildContext context) => showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Titulo'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            // ignore: prefer_const_literals_to_create_immutables
+            children: <Widget>[
+              Text("Contenido de la tarjeta"),
+              FlutterLogo(
+                size: 100.00,
+              ),
             ],
-          );
-        });
-  }
+          ),
+          actions: <Widget>[
+            TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: Text('Cancelar')),
+            TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: Text('Aceptar'))
+          ],
+        );
+      });
 }
